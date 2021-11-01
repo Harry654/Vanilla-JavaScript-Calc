@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html id="all" lang="en" encoding="UTF-8">
+<head>
+<title>CALCULATOR PROGRAM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="calcStyle.css">
+<div id="banner_div">
+<p id="hr"></p>
+<input id="opener" type="button" value="Calc" style="margin-left: 2%; border-color:red; color: yellow;" onclick="simple_calc_open();">
+<strong><b><p id="header_title">Multi CalCulator</p></b></strong>
+</div>
+<progress id="progress" value="20" max="100"></progress>
+<p id="counter"></p>
+
+<div id="logic">
+
+<input id="bar" type="button" value="" style="color:yellow; background-color:rgba(0, 0, 0, 0.5); margin-left:10px; margin-top:10px; width:175px; border-radius: 20px;"><br>
+<input id="AC" type="button" onclick="AC();" value="AC" style="margin-left:75px; margin-top:10px; border-radius: 20px;"><br>
+<input id="no_1" type="button" onclick="no_1();" value="1" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_2" type="button" onclick="no_2();" value="2" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_3" type="button" onclick="no_3();" value="3" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="add" type="button" onclick="add();" value="+" style="margin-left:10px; margin-top:10px; border-radius: 20px;"><br>
+<input id="no_4" type="button" onclick="no_4();" value="4" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_5" type="button" onclick="no_5();" value="5" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_6" type="button" onclick="no_6();" value="6" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="subtract" type="button" onclick="subtract();" value="-" style="margin-left:10px; margin-top:10px; border-radius: 20px;"><br>
+<input id="no_7" type="button" onclick="no_7();" value="7" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_8" type="button" onclick="no_8();" value="8" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_9" type="button" onclick="no_9();" value="9" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="multiply" type="button" onclick="multiply();" value="x" style="margin-left:10px; margin-top:10px; border-radius: 20px;"><br>
+<input id="decimal" type="button" onclick="decimal();" value="." style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="no_0" type="button" onclick="no_0();" value="0" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="del" type="button" onclick="del();" value="DEL" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="divide" type="button" onclick="divide();" value="/" style="margin-left:10px; margin-top:10px; border-radius: 20px;"><br>
+<input id="mod" type="button" onclick="mod();" value="mod" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="sqrt" type="button" onclick="sqrt();" value="sqrt" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="factorial" type="button" onclick="factorial();" value="!" style="margin-left:10px; margin-top:10px; border-radius: 20px;">
+<input id="equal" type="button" onclick="equal();" value="=" style="margin-left:10px; margin-top:10px; border-radius: 20px;"><br><br>
+<input id="cancel_2" type="button" onclick="cancel_2();" value="close" style="margin-left:50px; margin-top:20px; border-radius: 20px;"><br>
+</div>
+</head>
+
+<body>
+
+<div id="logic_1">
+<div id="ba_div"  style="width: 30%; height: 30%; background-color:rgba(0, 0, 255, 0.8); margin-left:30%; margin-top: 35%; visibility:hidden; position: absolute;"><input id="background_acceptor" type="text" value="" placeholder="Enter your preferred background" style="width: 45%; margin-left:30%; margin-top: 10%;"><br><br><input id="set_btn" type="button" value="Set" style="margin-left:40%;"></div>
+<input id="clear" type="button" value="X" onclick="cancel();" style="height:%; width:%; font-size:20px; border-radius:15px; color:yellow; margin-top:1%; margin-left:90%; font-family:lucida handwriting; position:absolute;">
+<input id="changer" type="button" class="buttons" value="Change Background" style="height:50px; width:; font-size:20px; border-radius:15px; color:yellow; margin-top:2%; font-family:lucida handwriting; position:absolute;">
+<p id="pa" style=" margin-top:17%; margin-left:18%; position:absolute;"></p>
+<input id="quiz" type="button" class="buttons" value="Take A Quiz" onclick="quiz_form_show();" style="height:50px; width:; font-size:20px; border-radius:15px; color:yellow; margin-top:20%; margin-left:40%; font-family:lucida handwriting; position:absolute;">
+<input type="button" id="about_btn" value="About" class="buttons" onclick="about();" style="font-size:100%; margin-top:11%; font-family:lucida handwriting; position: fixed;">
+</div>
+<div id="about"><input id="clear_3" type="button" value="X" onclick="cancel_3();" style="height:%; width:%; font-size:20px; border-radius:15px; color:yellow; margin-top:1%; margin-left:96%; font-family:lucida handwriting; position:absolute;"><br>
+<p>This calculator was made by two high school programmers from Nigeria by name Harrison Akunne and George Okeke. The source code of this calculator is not subjected to any copyright and is free for any programmer interested in modifying it. For any questions relating to the calculator please contact 09037442408 or email harrisonderick.65@gmail.com or lotannaokeke44@gmail.com. Thank you. Made in 2019/2020.</p></div>
+
+<div id="quiz_div">
+<h1 align="center"><u style="color:#005;">Math Quiz</u></h1>
+<P id="p_full_name" style="color:#005; margin-left:10%;"></P>
+<P id="p_date" style="color:#005; margin-left:10%;"></P>
+<hr id="math_hr">
+<br>
+<form>
+	<p class="p_quiz">1. What are the first ten digits of the constant 'PI' ?<br><input style="color:#005;" id="quiz_1" type="text" placeholder="Ans" /><span id="span_1"></span><br><details id="Exp_1" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>The first ten digits of PI are <b style="color:#005;">3.141592654</b></details></p>
+
+	<p class="p_quiz">2. Find the slope of the straight line joining the points (3,6) (13,46).<br><input style="color:#005;" id="quiz_2" type="text" placeholder="Ans" /><span id="span_2"></span><br><details id="Exp_2" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>Slope/Gradient = <sup style="color:#005;">dy</sup>/<sub style="color:#005;">dx</sub> = <sup style="color:#005;">y<sub style="color:#005;">2</sub>-y<sub style="color:#005;">1</sub></sup>/<sub style="color:#005;">x<sub style="color:#005;">2</sub>-x<sub style="color:#005;">1</sub></sub> = <sup style="color:#005;">46 - 16</sup>/<sub style="color:#005;">13 - 3</sub> = <sup style="color:#005;">40</sup>/<sub style="color:#005;">10</sub> = <b style="color:#005;">4</b></details></p>
+
+	<p class="p_quiz">3. The constant PI was first accurately computed by a man. What is this mans first name?.<br><input style="color:#005;" id="quiz_3" type="text" placeholder="Ans" /><span id="span_3"></span><br><details id="Exp_3" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary><b style="color:#005;">Archimedes</b> was the first man to accurately compute the ratio of the circumference of a circle to its diameter.</details></p>
+
+	<p class="p_quiz">4. <table border="10" style="color:#005;">
+						<tr style="color:#005;">
+			<td style="color:#005;">Math</td> 
+<td style="color:#005;">56</td> <td style="color:#005;">75</td> <td style="color:#005;">45</td> <td style="color:#005;">71</td> <td style="color:#005;">62</td> <td style="color:#005;">64</td> <td style="color:#005;">58</td> <td style="color:#005;">80</td> <td style="color:#005;">76</td> <td style="color:#005;">61</td>
+						</tr>
+						<tr style="color:#005;">
+			<td style="color:#005;">Physics</td> 
+<td style="color:#005;">66</td> <td style="color:#005;">70</td> <td style="color:#005;">40</td> <td style="color:#005;">60</td> <td style="color:#005;">65</td> <td style="color:#005;">56</td> <td style="color:#005;">59</td> <td style="color:#005;">77</td> <td style="color:#005;">67</td> <td style="color:#005;">63</td>
+						</tr>
+					</table>
+	<br><p style="color:#005;">The above table display's the scores of my_name in both Mathematics and Physics. <br>Find the product moment correlation coefficient of the scores to one decimal place.</p><br><input style="color:#005;" id="quiz_4" type="text" placeholder="Ans" /><span id="span_4"></span><br><details id="Exp_4" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>
+	<table border="20" style="color:#005;">
+		<tr style="color:#005;"><td style="color:#005;">X<sup style="color:#005;">2</sup></td><td style="color:#005;">Y<sup style="color:#005;">2</sup></td></tr>
+<tr style="color:#005;"><td style="color:#005;">3136</td><td style="color:#005;">4356</td></tr> <tr style="color:#005;"><td style="color:#005;">5625</td><td style="color:#005;">4900</td></tr> <tr style="color:#005;"><td style="color:#005;">2025</td><td style="color:#005;">1600</td></tr> <tr style="color:#005;"><td style="color:#005;">5041</td><td style="color:#005;">3600</td></tr> <tr style="color:#005;"><td style="color:#005;">3844</td><td style="color:#005;">4225</td></tr> <tr style="color:#005;"><td style="color:#005;">4096</td><td style="color:#005;">3136</td></tr> <tr style="color:#005;"><td style="color:#005;">3364</td><td style="color:#005;">3481</td></tr> <tr style="color:#005;"><td style="color:#005;">6400</td><td style="color:#005;">5929</td></tr> <tr style="color:#005;"><td style="color:#005;">5776</td><td style="color:#005;">4489</td></tr> <tr style="color:#005;"><td style="color:#005;">3271</td><td style="color:#005;">3969</td></tr> <tr style="color:#005;"><td colspan="2" align="center" style="color:#005;">SUM</td></tr> <tr style="color:#005;"><td style="color:#005;">43,028</td><td style="color:#005;">39,685</td></tr>
+	</table><br>EX = 648, EY = 623 and EXY = 41137.<br>
+	Using,<br>r =  <sup style="color:#005;">nExy - ExEy</sup>/<sub style="color:#005;">sqrt(nEx<sup style="color:#005;">2</sup> - (Ex)<sup style="color:#005;">2</sup>) x sqrt(nEy<sup style="color:#005;">2</sup> - (Ey)<sup style="color:#005;">2</sup>)</sub> =  <sup style="color:#005;">10(41137) - 648(623)</sup>/<sub style="color:#005;">sqrt(10(43028) - 648<sup style="color:#005;">2</sup>) x sqrt(10(39685) - 623<sup style="color:#005;">2</sup>)</sub> = <sup style="color:#005;">7666</sup>/<sub style="color:#005;">9512.575676</sub> = 0.8058805196<br> Therefore the product moment correlation coefficient is <b style="color:#005;">0.8</b></details></p>
+
+	<p class="p_quiz">5. Calculate the number of ways the first, second and third prizes can be awarded to ten contestants in a quiz.<br><input style="color:#005;" id="quiz_5" type="text" placeholder="Ans" /><span id="span_5"></span><br><details id="Exp_5" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>The question is simply asking for how many ways three different prices can be awarded to ten different students. In other words, it calls for permutation (arrangement).<br> <sup style="color:#005;">10</sup>P<sub style="color:#005;">3</sub> = <sup style="color:#005;">10!</sup>/<sub style="color:#005;">(10 - 3)!</sub> = <b style="color:#005;">720</b></details></p>
+
+	<p class="p_quiz">6. In how many ways can two different sets of letters be selected from the letters ABC.<br><input style="color:#005;" id="quiz_6" type="text" placeholder="Ans" /><span id="span_6"></span><br><details id="Exp_6" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>This question is simply about combination (selection).<br> <sup style="color:#005;">3</sup>C<sub style="color:#005;">2</sub> = <sup style="color:#005;">3!</sup>/<sub style="color:#005;">2! (3 - 2)!</sub> = <b style="color:#005;">3</b></details></p>
+
+	<p class="p_quiz">7. <br>12 + 5X - 3X<sup style="color:#005;">2</sup> --- Equation <b style="color:#005;">1</b> <br>X<sup style="color:#005;">2</sup> - 4 --- Equation <b style="color:#005;">2</b> <br>What is the sum of the positive root of equation 1 and the negative root of equation 2. <br><input style="color:#005;" id="quiz_7" type="text" placeholder="Ans" /><span id="span_7"></span><br><details id="Exp_7" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>12 + 5X - 3X<sup style="color:#005;">2</sup> = (12 + 9X)-(4X + 3X<sup style="color:#005;">2</sup>) = 3(4 + 3X) - X(4 + 3X)<br> X = 3 or <sup style="color:#005;">-4</sup>/<sub style="color:#005;">3</sub>. The positive root is 3.<br> X<sup style="color:#005;">2</sup> - 4 = (X + 2)(X - 2)<br> X = 2 or -2. The negative root is -2.<br> Therefore, 3 + (-2) = 3 - 2 = <b style="color:#005;">1.</b>	</details></p>
+
+	<p class="p_quiz">8. <br>I. First term = 5 and common difference = -10 <br>II. First term = -20 and common difference = 100. <br>Find the factorial of the absolute value of the sum of (the sum of the first 7 terms of <b style="color:#005;">I</b>) and (the third term of <b style="color:#005;">II</b>).<br><input style="color:#005;" id="quiz_8" type="text" placeholder="Ans" /><span id="span_8"></span><br><details id="Exp_8" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>First of all lets evaluate the sum of the first 7 terms of <b style="color:#005;">I</b><br> Sum of AP: <sup style="color:#005;">n</sup>/<sub style="color:#005;">2</sub><sup style="color:#005;">[2a + (n-1)d]</sup> = <sup style="color:#005;">7</sup>/<sub style="color:#005;">2</sub><sup style="color:#005;">[2(5) + (7-1)(-10)]</sup> = 3.5[10 + -60] = -175<br> For <b style="color:#005;">II</b> T(n) = a + (n - 1)d = T(3) = -20 + (3 - 1)100 = 180<br> |180| = 180(absolute value)<br> -175 + 180 = 5.<br> 5! = 5 x 4 x 3 x 2 x 1 = <b style="color:#005;">120</b></details></p>
+
+	<p class="p_quiz">9. What is the additive inverse of the sum of first ten terms of a progression with its first term as 2 and common ratio as 3.<br><input style="color:#005;" id="quiz_9" type="text" placeholder="Ans" /><span id="span_9"></span><br><details id="Exp_9" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>Sum of G.P: <sup style="color:#005;">a(r<sup style="color:#005;">n</sup> - 1)</sup>/<sub style="color:#005;">r - 1</sub> = <sup style="color:#005;">2(3<sup style="color:#005;">10</sup> - 1)</sup>/<sub style="color:#005;">3 - 1</sub> = 59048<br> The additive inverse of 58048 is <b style="color:#005;">-59048</b></details></p>
+
+	<p class="p_quiz">10. If 63 mod X is equivalent to <sup style="color:#005;">3</sup>C<sub style="color:#005;">0</sub>. What is the value of X that ranges from 30 to 40 inclusive. <br><input style="color:#005;" id="quiz_10" type="text" placeholder="Ans" /><span id="span_10"></span><br><details id="Exp_10" style="visibility:hidden; color:#005;"><summary style="color:#005;">Solution</summary>First of all <sup style="color:#005;">3</sup>C<sub style="color:#005;">0</sub> = <sup style="color:#005;">3!</sup>/<sub style="color:#005;">0! (3 - 0)!</sub> = 1<br> <i style="color:#005;">Therefore, 63 mod X = 1 (63 divided by X leaves a remainder of 1)</i><br> The value of X could be 31, 32, 33, 34,..., 39.<br> Using trial and error method: <sup style="color:#005;">63</sup>/<sub style="color:#005;">31</sub> = 2 rem 1.<br> Therefore, answer is <b style="color:#005;">31</b>.</details></p>
+
+	<input id="quiz_submit" style="color:#005; position:absolute;" type="button" value="Submit" onclick="submit_confirm_show();">
+	<input id="cancel_3" type="reset" onclick="exit_confirm_show();" value="Exit" style="color:#005; position:absolute; margin-left:10%;">
+
+</div>
+<div id="quiz_form">
+<h1 align="center"><u style="color:#005;">Fill in the form</u><hr></h1>
+	<input style="color:#005; margin-left:40%;" id="first_name" type="text" placeholder="First Name" /><br><br><br>
+	<input style="color:#005; margin-left:40%;" id="last_name" type="text" placeholder="Last Name" /><br><br><br>
+	<input style="color:#005; margin-left:40%;" id="date" type="text" placeholder="mm/dd/yy" /><br><br><br>
+	<p id="form_validation"></p>
+	<input style="color:#005; margin-left:35%;" type="button" value="proceed" onclick="quiz_show();">
+	<input style="color:#005; margin-left:10%;" type="button" value="Return" onclick="quiz_form_hide();">
+</div>
+<div id="submit_confirm">
+<h1 align="center" style="color:#005;">Are you sure you want to submit ?<hr></h1>
+	<input value="Yes" onclick="submit_yes();" style="width:25%; height:20%; color:cyan; background-color:#005; position:absolute; margin-left:15%;" type="button"  />
+	<input value="No" onclick="submit_no();" style="width:25%; height:20%; color:cyan; background-color:#005; position:absolute; margin-left:55%;" type="button"  />
+</div>
+<div id="exit_confirm">
+<h1 align="center" style="color:#005;">Are you sure you want to exit ?<hr></h1>
+	<input value="Yes" onclick="exit_yes();" style="width:25%; height:20%; color:cyan; background-color:#005; position:absolute; margin-left:15%;" type="button"  />
+	<input value="No" onclick="exit_no();" style="width:25%; height:20%; color:cyan; background-color:#005; position:absolute; margin-left:55%;" type="button"  />
+</div>
+</form>
+
+
+
+<script src="index.js">
+
+<br><br><footer>
+<input id="customize" type="button" class="buttons" value="User Preferences" onclick="logic_1();" style="margin-left:0%; margin-top:10%; position:fixed;">
+</footer>
+
+</body>
+</html>
